@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MySql" id="Project-a50" database="MySql" >
+	<schema name="caycdrop_db" >
+		<table name="tbl_account" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="user_id" type="INT" jt="4" />
+			<column name="username" type="VARCHAR" length="100" jt="12" />
+			<column name="g_rank" type="INT" jt="4" />
+			<column name="avatar" type="VARCHAR" length="255" jt="12" />
+			<column name="locked_chat" type="TINYINT" length="1" jt="-6" />
+			<column name="sticky_referee" type="TINYINT" length="1" jt="-6" />
+			<column name="total_deposit" type="INT" jt="4" />
+			<column name="total_rake_back" type="INT" jt="4" />
+			<column name="daily_withdraw_limit" type="INT" jt="4" />
+			<column name="team_id" type="INT" jt="4" />
+			<column name="is_trader" type="TINYINT" length="1" jt="-6" />
+			<column name="last_paypal_deposit_at" type="DATE" jt="91" />
+			<column name="suspected_trader" type="TINYINT" length="1" jt="-6" />
+			<column name="is_authentic" type="TINYINT" length="1" jt="-6" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_account" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_box_items" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="box_id" type="INT" jt="4" />
+			<column name="item_id" type="INT" jt="4" />
+			<column name="rate" type="FLOAT" jt="7" />
+			<column name="roll_start" type="FLOAT" jt="7" />
+			<column name="roll_end" type="FLOAT" jt="7" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_box_items" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="tbl_boxs" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="ancestor_box" type="INT" jt="4" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="cost" type="DOUBLE" jt="8" />
+			<column name="original_price" type="DOUBLE" jt="8" />
+			<column name="currency" type="VARCHAR" length="10" jt="12" />
+			<column name="level_required" type="INT" jt="4" />
+			<column name="tags" type="TEXT" jt="-1" />
+			<column name="max_purchases_daily" type="DOUBLE" jt="8" />
+			<column name="purchasable" type="BOOLEAN" jt="16" />
+			<column name="sellable" type="BOOLEAN" jt="16" />
+			<column name="openable" type="BOOLEAN" jt="16" />
+			<column name="slug" type="VARCHAR" length="255" jt="12" />
+			<column name="market" type="DOUBLE" jt="8" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_boxs" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[engine=InnoDB]]></options>
+		</table>
+		<table name="tbl_contries" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="code" type="VARCHAR" length="5" jt="12" />
+			<column name="name" type="VARCHAR" length="100" jt="12" />
+			<column name="dial_code" type="INT" jt="4" />
+			<index name="pk_tbl_contries" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_exchange_rates" spec="" >
+			<column name="currency" type="CHAR" length="10" jt="1" mandatory="y" />
+			<column name="rate" type="FLOAT" jt="7" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_exchange_rates" unique="PRIMARY_KEY" >
+				<column name="currency" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_items" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="name" type="VARCHAR" length="255" jt="12" />
+			<column name="icon_url" type="VARCHAR" length="255" jt="12" />
+			<column name="description" type="TEXT" jt="-1" />
+			<column name="brand" type="VARCHAR" length="100" jt="12" />
+			<column name="value" type="DOUBLE" jt="8" />
+			<column name="usable" type="TINYINT" length="1" jt="-6" />
+			<column name="obtainable" type="TINYINT" length="1" jt="-6" />
+			<column name="withdrawable" type="TINYINT" length="1" jt="-6" />
+			<column name="min_rarity" type="VARCHAR" length="50" jt="12" />
+			<column name="max_rarity" type="VARCHAR" length="50" jt="12" />
+			<column name="released_at" type="DATE" jt="91" />
+			<column name="color" type="VARCHAR" length="50" jt="12" />
+			<column name="size" type="VARCHAR" length="50" jt="12" />
+			<column name="currency" type="VARCHAR" length="10" jt="12" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_items" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_settings" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="key" type="VARCHAR" length="100" jt="12" />
+			<column name="value" type="JSON" jt="2000" />
+			<column name="type" type="VARCHAR" length="20" jt="12" />
+			<column name="description" type="TEXT" jt="-1" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_settings" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_user_cart" spec="" >
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="item_id" type="INT" jt="4" />
+			<column name="status" type="INT" jt="4" />
+			<column name="created_at" type="DATE" jt="91" mandatory="y" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_user_document" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="doc_type" type="VARCHAR" length="15" jt="12" mandatory="y" >
+				<defo><![CDATA['_utf8mb4'identity'']]></defo>
+			</column>
+			<column name="file_path_1" type="VARCHAR" length="255" jt="12" />
+			<column name="file_path_2" type="VARCHAR" length="255" jt="12" />
+			<column name="created_at" type="DATE" jt="91" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<index name="pk_tbl_user_document" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_user_info" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="first_name" type="VARCHAR" length="100" jt="12" />
+			<column name="last_name" type="VARCHAR" length="100" jt="12" />
+			<column name="address" type="VARCHAR" length="100" jt="12" />
+			<column name="address_2" type="VARCHAR" length="100" jt="12" />
+			<column name="zip_code" type="VARCHAR" length="15" jt="12" />
+			<column name="state" type="VARCHAR" length="50" jt="12" />
+			<column name="city" type="VARCHAR" length="50" jt="12" />
+			<column name="country" type="VARCHAR" length="30" jt="12" />
+			<column name="phone" type="VARCHAR" length="15" jt="12" />
+			<column name="birthday" type="DATE" jt="91" />
+			<column name="gender" type="TINYINT" jt="-6" />
+			<column name="created_at" type="DATE" jt="91" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_user_info" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="unq_tbl_user_info_user_id" unique="UNIQUE_KEY" >
+				<column name="user_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_user_progress" spec="" >
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="xp" type="BIGINT" jt="-5" />
+			<column name="required_xp" type="BIGINT" jt="-5" />
+			<column name="next_required_xp" type="BIGINT" jt="-5" />
+			<column name="level" type="INT" jt="4" />
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_user_progress" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_user_verify" spec="" >
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="token" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="created_at" type="DATE" jt="91" mandatory="y" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_users" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="email" type="VARCHAR" length="50" jt="12" mandatory="y" />
+			<column name="password" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="token" type="VARCHAR" length="255" jt="12" />
+			<column name="is_subscribe" type="TINYINT" length="1" jt="-6" mandatory="y" >
+				<defo><![CDATA[true]]></defo>
+			</column>
+			<column name="verified" type="TINYINT" length="1" jt="-6" mandatory="y" >
+				<defo><![CDATA[false]]></defo>
+			</column>
+			<column name="steam_id" type="VARCHAR" length="50" jt="12" />
+			<column name="steam_apikey" type="VARCHAR" length="255" jt="12" />
+			<column name="steam_trade_url" type="VARCHAR" length="255" jt="12" />
+			<column name="created_at" type="DATE" jt="91" mandatory="y" >
+				<defo><![CDATA[curdate()]]></defo>
+			</column>
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_users" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+		<table name="tbl_wallets" spec="" >
+			<column name="id" type="INT" jt="4" mandatory="y" />
+			<column name="user_id" type="INT" jt="4" mandatory="y" />
+			<column name="main" type="DOUBLE" jt="8" mandatory="y" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="main_currency" type="CHAR" length="10" jt="1" mandatory="y" >
+				<defo><![CDATA['_utf8mb4'USD'']]></defo>
+			</column>
+			<column name="bonus" type="DOUBLE" jt="8" mandatory="y" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="bonus_currency" type="CHAR" length="10" jt="1" mandatory="y" >
+				<defo><![CDATA['_utf8mb4'USD'']]></defo>
+			</column>
+			<column name="affiliate_earnings" type="DOUBLE" jt="8" mandatory="y" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="affiliate_currency" type="CHAR" length="10" jt="1" mandatory="y" >
+				<defo><![CDATA['_utf8mb4'USD'']]></defo>
+			</column>
+			<column name="gem_stone" type="DOUBLE" jt="8" mandatory="y" >
+				<defo><![CDATA[0]]></defo>
+			</column>
+			<column name="gem_currency" type="CHAR" length="10" jt="1" mandatory="y" >
+				<defo><![CDATA['_utf8mb4'USD'']]></defo>
+			</column>
+			<column name="updated_at" type="DATE" jt="91" />
+			<index name="pk_tbl_wallets" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci]]></options>
+		</table>
+	</schema>
+	<connector name="MySql" database="MySql" driver_class="com.mysql.cj.jdbc.NonRegisteringDriver" driver_jar="mysql-connector-java-8.0.30.jar" driver_desc="Standard" host="localhost" port="3306" instance="caycdrop_db" user="root" passwd="bXlzcWw=" />
+	<layout name="Caycdrop" id="Layout-26db" show_relation="columns" >
+		<entity schema="caycdrop_db" name="tbl_account" color="3986C1" x="400" y="64" />
+		<entity schema="caycdrop_db" name="tbl_box_items" color="C1D8EE" x="1200" y="112" />
+		<entity schema="caycdrop_db" name="tbl_boxs" color="C1D8EE" x="1008" y="112" />
+		<entity schema="caycdrop_db" name="tbl_contries" color="3986C1" x="640" y="64" />
+		<entity schema="caycdrop_db" name="tbl_exchange_rates" color="3986C1" x="784" y="64" />
+		<entity schema="caycdrop_db" name="tbl_items" color="3986C1" x="624" y="400" />
+		<entity schema="caycdrop_db" name="tbl_settings" color="3986C1" x="624" y="208" />
+		<entity schema="caycdrop_db" name="tbl_user_cart" color="3986C1" x="240" y="336" />
+		<entity schema="caycdrop_db" name="tbl_user_document" color="3986C1" x="240" y="480" />
+		<entity schema="caycdrop_db" name="tbl_user_info" color="3986C1" x="48" y="80" />
+		<entity schema="caycdrop_db" name="tbl_user_progress" color="3986C1" x="416" y="416" />
+		<entity schema="caycdrop_db" name="tbl_user_verify" color="3986C1" x="48" y="416" />
+		<entity schema="caycdrop_db" name="tbl_users" color="3986C1" x="208" y="48" />
+		<entity schema="caycdrop_db" name="tbl_wallets" color="3986C1" x="768" y="192" />
+	</layout>
+</project>
