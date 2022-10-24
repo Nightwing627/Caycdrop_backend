@@ -218,7 +218,7 @@ const HomeContoller = {
                                         link: null,
                                         isNewTab: null,
                                         image: {
-                                           path: "3ef0af8f-1a51-4538-a110-ed43f472fc3e/dev/8b541301-cdbb-48c7-9147-ee653163ecfa/paypal.svg",
+                                            path: "3ef0af8f-1a51-4538-a110-ed43f472fc3e/dev/8b541301-cdbb-48c7-9147-ee653163ecfa/paypal.svg",
                                             description: null,
                                             backgroundColor: null,
                                             mimeType: "image/svg+xml",
@@ -237,11 +237,11 @@ const HomeContoller = {
                                             mimeType: "image/svg+xml",
                                         },
                                         text: null,
-                                        visibleFor: null,     
+                                        visibleFor: null,
                                     }
-                                ],    
+                                ],
                             }
-                        ],  
+                        ],
                     }
                 ],
             },
